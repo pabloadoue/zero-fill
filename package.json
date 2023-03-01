@@ -1,0 +1,38 @@
+{
+  "name": "zero-fill",
+  "version": "1.0.0",
+  "description": "Zero-fill a number to the given size.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloadoue/zero-fill.git"
+  },
+  "author": "pabloadoue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pabloadoue/zero-fill/issues"
+  },
+  "homepage": "https://github.com/pabloadoue/zero-fill#readme",
+  "dependencies": {
+    "jest": "^29.4.3",
+    "prettier": "^2.8.4",
+    "ts-jest": "^29.0.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.4.0"
+  }
+}
